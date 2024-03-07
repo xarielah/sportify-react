@@ -1,16 +1,12 @@
-import { Outlet } from "react-router-dom";
-import NavigationBar from "../ui/components/navigation/navigation-bar";
+import Hero from "@/ui/components/quickactions-hero/hero";
+import ProtectedComponent from "@/ui/wrappers/protected-component";
 
 export default function Root() {
   return (
-    <main>
-      <header>
-        <NavigationBar />
-      </header>
-      <div>
-        <Outlet />
-      </div>
-      <footer>footer!!!</footer>
-    </main>
+    <section>
+      <ProtectedComponent>
+        <Hero />
+      </ProtectedComponent>
+    </section>
   );
 }

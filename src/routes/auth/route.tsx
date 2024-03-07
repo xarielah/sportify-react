@@ -1,14 +1,14 @@
 import { RouteObject } from "react-router-dom";
-import Logout from "./logout/logout";
 import Login from "./login/login";
+import Logout from "./logout/logout";
 
-const logoutRoute: RouteObject = {
-  path: "logout",
+export const logoutRoute: RouteObject = {
+  path: "/logout",
   element: <Logout />,
 };
 
-const loginRoute: RouteObject = {
-  path: "login",
+export const loginRoute: RouteObject = {
+  path: "/login",
   element: <Login />,
 };
 

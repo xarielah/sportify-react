@@ -1,0 +1,50 @@
+{
+    "pages": {
+        "do": {
+            "add-run": {
+                "title": "הוספת ריצה",
+                "description": "טקסט טקסט טקסט טקסט טקסט טקסט טקסט טקסט טקסט",
+                "fieldErrors": {
+                    "date": {
+                        "invalid": "תאריך לא תקין",
+                        "required": "תאריך חובה"
+                    },
+                    "distance": {
+                        "invalid": "מרחק לא תקין",
+                        "required": "מרחק חובה"
+                    },
+                    "length": {
+                        "invalid": "זמן לא תקין",
+                        "required": "זמן חובה"
+                    },
+                    "steps": {
+                        "invalid": "זמן לא תקין",
+                        "required": "זמן חובה"
+                    }
+                }
+            },
+            "add-workout": {
+                "title": "הוספת אימון גופני ",
+                "description": "טקסט טקסט טקסט טקסט טקסט טקסט טקסט טקסט טקסט",
+                "fieldErrors": {
+                    "date": {
+                        "invalid": "תאריך לא תקין",
+                        "required": "תאריך חובה"
+                    },
+                    "distance": {
+                        "invalid": "מרחק לא תקין",
+                        "required": "מרחק חובה"
+                    },
+                    "length": {
+                        "invalid": "זמן לא תקין",
+                        "required": "זמן חובה"
+                    },
+                    "comment": {
+                        "invalid": "הערה אינה תקינה",
+                        "required": "הערה חובה"
+                    }
+                }
+            }
+        }
+    }
+}

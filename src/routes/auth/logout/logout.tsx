@@ -12,6 +12,5 @@ export default function Logout() {
     });
   }, []);
 
-  //   return <Navigate to="/" />;
-  return <>asd</>;
+  return <Navigate to="/" />;
 }

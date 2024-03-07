@@ -3,7 +3,7 @@ import ProtectedRoute from "../../ui/wrappers/protected-route";
 import { Activities } from "./activities";
 
 export const activitiesRoute: RouteObject = {
-  path: "activities",
+  path: "/activities",
   element: (
     <ProtectedRoute>
       <Activities />

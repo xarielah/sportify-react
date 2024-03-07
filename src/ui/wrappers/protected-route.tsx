@@ -1,15 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { type AppContext, appContext } from "../app-context/app-context";
+import { Navigate } from "react-router-dom";
 
 export default function ProtectedRoute({ children }: IProtectedRoute) {
-  const [show, setShow] = useState<boolean>(false);
+  const { isLogged, isLoading } = useContext<AppContext>(appContext);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShow(true);
-    }, 3000);
-  }, []);
-
-  if (!show) return <div>loading...</div>;
+  if (isLoading) return "";
+  if (!isLogged && !isLoading) return <Navigate to="/" replace={true} />;
   return <div>{children}</div>;
 }
 

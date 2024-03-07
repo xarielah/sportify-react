@@ -1,14 +1,23 @@
 import { RouteObject } from "react-router-dom";
 import ErrorComponent from "../ui/error-boundary/error-component";
-
-import Root from "./root";
-import { profileRoute } from "./profile/route";
 import { activitiesRoute } from "./activities/route";
-import authRoutes from "./auth/route";
+import { loginRoute, logoutRoute } from "./auth/route";
+import { doRoute } from "./do/route";
+import Layout from "./layout";
+import Root from "./root";
 
-export const routes: RouteObject = {
+export const mainRoute: RouteObject = {
   path: "/",
-  element: <Root />,
-  children: [profileRoute, activitiesRoute, ...authRoutes],
+  element: <Layout />,
+  children: [
+    {
+      path: "/",
+      element: <Root />,
+    },
+    loginRoute,
+    logoutRoute,
+    activitiesRoute,
+    doRoute,
+  ],
   errorElement: <ErrorComponent />,
 };

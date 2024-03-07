@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 const defaultContext: InitialContext = {
   user: null,
   isLogged: false,
+  isLoading: true,
 };
 
 export const appContext = createContext<AppContext>({
@@ -10,17 +11,19 @@ export const appContext = createContext<AppContext>({
   user: null,
   setUser: () => {},
   removeUser: () => {},
+  isLoading: true,
 });
 
 export default function AppContextProvider({ children }: IAppContextProvider) {
   const [state, setState] = useState<InitialContext>(defaultContext);
 
   const setUser = (user: User) => {
-    setState({ ...appContext, user, isLogged: true });
+    if (!user) return removeUser();
+    setState({ ...appContext, user, isLogged: true, isLoading: false });
   };
 
   const removeUser = () => {
-    setState({ ...appContext, user: null, isLogged: false });
+    setState({ ...appContext, user: null, isLogged: false, isLoading: false });
   };
 
   const store = {
@@ -39,6 +42,7 @@ interface IAppContextProvider {
 type InitialContext = {
   user: User;
   isLogged: boolean;
+  isLoading: boolean;
 };
 
 export type AppContext = {

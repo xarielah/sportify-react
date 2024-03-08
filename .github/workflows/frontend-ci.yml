@@ -20,7 +20,9 @@ jobs:
         run: npm ci
 
       - name: ENV Vars
-        run: echo "${{ secrets.PROD_ENV }}" >> .env
+        run: |
+          touch .env
+          echo "${{ secrets.PROD_ENV }}" > .env
 
       - name: Build
         run: npm run build

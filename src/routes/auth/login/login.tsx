@@ -1,10 +1,10 @@
-import { Navigate, useNavigate } from "react-router-dom";
-import {
-  type AppContext,
-  appContext,
-} from "../../../ui/app-context/app-context";
 import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import config from "../../../service/config";
+import {
+  appContext,
+  type AppContext,
+} from "../../../ui/app-context/app-context";
 
 export default function Login() {
   const { isLogged } = useContext<AppContext>(appContext);
